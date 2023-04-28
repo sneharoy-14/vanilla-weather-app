@@ -11,7 +11,6 @@
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="src/style.css" />
     <script
       src="https://kit.fontawesome.com/5ed3cd2c53.js"
       crossorigin="anonymous"
@@ -19,9 +18,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.1.2/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="page">
@@ -31,7 +32,10 @@
             <div class="col-7">
               <h1>London</h1>
             </div>
-            <div class="col-5 temperature">11°C | °F</div>
+            <div class="col-5 temperature">
+              <span id="temp-number"></span>
+              <span>°C | °F</span>
+            </div>
           </div>
           <div class="row">
             <div class="col-1"></div>
@@ -39,16 +43,16 @@
               <i class="fa-solid fa-cloud" style="color: #0e0c82"></i>
             </div>
             <br />
-            <div class="col-5 description">Cloudy</div>
+            <div id="description" class="col-5 description">Cloudy</div>
           </div>
           <div class="row">
             <div class="col-7"></div>
             <div class="col-5 information">
               <ul>
-                <li>Friday 11:11</li>
+                <li class="date"><strong>Friday 11:11</strong></li>
                 <li>Precipitation 30%</li>
-                <li>Humidity 73%</li>
-                <li>Wind 14mph</li>
+                <li>Humidity <span id="humidity"></span>%</li>
+                <li>Wind <span id="wind-speed"></span> km/h</li>
               </ul>
             </div>
           </div>
@@ -64,5 +68,6 @@
         </div>
       </div>
     </div>
+    <script src="src/app.js"></script>
   </body>
 </html>
