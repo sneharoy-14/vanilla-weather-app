@@ -16,39 +16,53 @@
       src="https://kit.fontawesome.com/5ed3cd2c53.js"
       crossorigin="anonymous"
     ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div class="container">
-      <div class="weather-app">
-        <div class="row">
-          <div class="col-6">
-            <h1>London</h1>
+    <div class="page">
+      <div class="container">
+        <div class="weather-app">
+          <div class="row">
+            <div class="col-7">
+              <h1>London</h1>
+            </div>
+            <div class="col-5 temperature">11°C | °F</div>
           </div>
-          <div class="col-6">11°C | °F</div>
+          <div class="row">
+            <div class="col-1"></div>
+            <div class="col-6 main-cloud">
+              <i class="fa-solid fa-cloud" style="color: #0e0c82"></i>
+            </div>
+            <br />
+            <div class="col-5 description">Cloudy</div>
+          </div>
+          <div class="row">
+            <div class="col-7"></div>
+            <div class="col-5 information">
+              <ul>
+                <li>Friday 11:11</li>
+                <li>Precipitation 30%</li>
+                <li>Humidity 73%</li>
+                <li>Wind 14mph</li>
+              </ul>
+            </div>
+          </div>
         </div>
-        <div class="row">
-          <div class="col-6">
-            <i class="fa-solid fa-cloud" style="color: #3098f5"></i>
-          </div>
-          <div class="col-6">Cloudy</div>
-        </div>
-        <div class="row">
-          <div class="col-6"></div>
-          <div class="col-6">
-            <ul>
-              <li>Friday 11:11</li>
-              <li>Precipitation 30%</li>
-              <li>Humidity 73%</li>
-              <li>Wind 14mph</li>
-            </ul>
-          </div>
+        <div class="footer">
+          <small>
+            <a
+              class="git-link"
+              href="https://github.com/sneharoy-14/vanilla-weather-app"
+              >Open-source code </a
+            >by Sneha Dey Roy
+          </small>
         </div>
       </div>
-      <small>
-        <a href="https://github.com/sneharoy-14/vanilla-weather-app"
-          >Open-source code </a
-        >by Sneha Dey Roy
-      </small>
     </div>
   </body>
 </html>

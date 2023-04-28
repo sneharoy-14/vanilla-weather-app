@@ -1,0 +1,58 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  color: #fff;
+  background-image: url(../imgs/background.jpg);
+  background-size: cover;
+}
+h1 {
+  font-size: 43px;
+}
+
+a:link {
+  color: #fff;
+  text-decoration: none;
+}
+a:visited {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  color: #3098f5;
+  cursor: pointer;
+}
+ul {
+  margin: 0;
+  padding-left: 7px;
+}
+li {
+  list-style: none;
+  font-size: 18px;
+  margin: 0px;
+  padding: 0px;
+}
+.temperature {
+  font-size: 42px;
+}
+.main-cloud {
+  font-size: 38px;
+  text-align: left;
+}
+.description {
+  font-size: 40px;
+  margin-bottom: 0;
+}
+.weather-app {
+  max-width: 580px;
+  margin: 75px auto 0px;
+  padding: 20px;
+  border: 2px solid;
+  border-radius: 10px;
+  border-color: #f0f8ff;
+  background-color: none;
+}
+.footer {
+  color: #fff;
+  text-align: center;
+  margin: 0 auto;
+}
