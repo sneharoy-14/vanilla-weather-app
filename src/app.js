@@ -22,20 +22,21 @@ function formatDate(timestamp) {
 }
 
 function displayTemp(response) {
-  let temperature = Math.round(response.data.main.temp);
+  console.log(response);
+  let temperature = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector(`#temp-number`);
   temperatureElement.innerHTML = `${temperature}`;
   let description = document.querySelector(`#description`);
-  description.innerHTML = response.data.weather[0].main;
+  description.innerHTML = response.data.condition.description;
   let humidity = document.querySelector(`#humidity`);
-  humidity.innerHTML = response.data.main.humidity;
+  humidity.innerHTML = response.data.temperature.humidity;
   let windSpeed = document.querySelector(`#wind-speed`);
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   let date = document.querySelector(`#date`);
-  date.innerHTML = formatDate(response.data.dt * 1000);
+  date.innerHTML = formatDate(response.data.time * 1000);
 }
 
-let apiKey = "c119ffef35b7245a5e03b6e5724ae961";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=London&appid=${apiKey}&units=metric`;
+let apiKey = "babc1213f11b9atf604b57efa38oa64c";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=London&key=${apiKey}&units=metric`;
 
 axios.get(apiUrl).then(displayTemp);
