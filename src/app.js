@@ -25,8 +25,9 @@ function displayTemp(response) {
   console.log(response);
   let cityElement = document.querySelector(`#city`);
   cityElement.innerHTML = response.data.city;
-  let temperature = Math.round(response.data.temperature.current);
   let temperatureElement = document.querySelector(`#temp-number`);
+  celsiusTemp = response.data.temperature.current;
+  let temperature = Math.round(celsiusTemp);
   temperatureElement.innerHTML = `${temperature}`;
   let descriptionElement = document.querySelector(`#description`);
   descriptionElement.innerHTML = response.data.condition.description;
@@ -48,12 +49,38 @@ function search(city) {
 
   axios.get(apiUrl).then(displayTemp);
 }
+let form = document.querySelector(`#search-form`);
+form.addEventListener("submit", handleSubmit);
 
-function sumbitting(event) {
+function handleSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector(`#city-input`);
   search(cityInputElement.value);
 }
+
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let temperatureElement = document.querySelector(`#temp-number`);
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector(`#temp-number`);
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
+}
+
+let celsiusTemp = null;
+
+let fahrenheitLink = document.querySelector(`#fahrenheit-link`);
+fahrenheitLink.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusLink = document.querySelector(`#celsius-link`);
+celsiusLink.addEventListener("click", displayCelsiusTemp);
+
 search("London");
-let form = document.querySelector(`#search-form`);
-form.addEventListener("submit", sumbitting);
