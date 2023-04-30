@@ -42,8 +42,18 @@ function displayTemp(response) {
     `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`
   );
 }
-let apiKey = "babc1213f11b9atf604b57efa38oa64c";
-let city = "London";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+function search(city) {
+  let apiKey = "babc1213f11b9atf604b57efa38oa64c";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-axios.get(apiUrl).then(displayTemp);
+  axios.get(apiUrl).then(displayTemp);
+}
+
+function sumbitting(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector(`#city-input`);
+  search(cityInputElement.value);
+}
+search("London");
+let form = document.querySelector(`#search-form`);
+form.addEventListener("submit", sumbitting);
