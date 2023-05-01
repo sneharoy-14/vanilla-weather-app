@@ -6,7 +6,7 @@ body {
   background-repeat: no-repeat;
 }
 h1 {
-  font-size: 43px;
+  font-size: 40px;
 }
 ul {
   margin: 0;
@@ -14,7 +14,7 @@ ul {
 }
 li {
   list-style: none;
-  font-size: 18px;
+  font-size: 17px;
   margin: 0px;
   padding: 0px;
 }
@@ -32,10 +32,10 @@ li {
   );
 }
 .date {
-  font-size: 20px;
+  font-size: 19px;
 }
 .temperature {
-  font-size: 42px;
+  font-size: 40px;
 }
 .main-cloud {
   font-size: 50px;
@@ -53,8 +53,26 @@ li {
 .temperature .active:hover {
   text-decoration: none;
 }
+
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+}
+.weather-forecast-date {
+  font-size: 19px;
+}
+.weather-forecast-temp {
+  font-size: 17px;
+}
+.weather-forecast-temp-min {
+  opacity: 0.75;
+}
+
 .footer {
   color: #fff;
   text-align: center;
   margin: 0 auto;
+}
+.git-link {
+  color: #fff;
 }
